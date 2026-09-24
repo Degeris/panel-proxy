@@ -1,45 +1,33 @@
 # 💙 Panel Proxy
 
 <p align="center">
-  <b>🔗 Hide your Backend behind your Domain</b><br>
+  <b>🔗 Panel Proxy — Hide Your Backend Behind Your Domain</b><br>
   Simple • Fast • Lightweight
-</p>
-
-<p align="center">
-  <a href="https://github.com/Degeris/panel-proxy">
-    <img src="https://img.shields.io/badge/GitHub-Degeris%2Fpanel--proxy-black?style=for-the-badge&logo=github" alt="GitHub">
-  </a>
 </p>
 
 ---
 
 ## ⚡ نصب سریع
 
-برای نصب مستقیم آخرین نسخه، دستور زیر را روی سرور اجرا کنید:
+برای نصب خودکار Panel Proxy روی سرور، فقط دستور زیر را اجرا کنید:
 
 ```bash
-curl -fsSL -o install.sh https://raw.githubusercontent.com/Degeris/panel-proxy/main/install.sh && chmod +x install.sh && ./install.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/Degeris/panel-proxy/main/Degeris.sh)
 ```
 
-این دستور:
-
-- 📥 فایل `install.sh` را از GitHub دانلود می‌کند.
-- ⚙️ دسترسی اجرای فایل را فعال می‌کند.
-- 🚀 Installer را اجرا می‌کند.
+اسکریپت `Degeris.sh` به‌صورت خودکار پیش‌نیازهای موردنیاز را نصب کرده و سپس `install.sh` اصلی پروژه را دانلود و اجرا می‌کند.
 
 ---
 
 ## 📌 معرفی
 
-**Panel Proxy** یک ابزار سبک و کاربردی برای قرار دادن آدرس اصلی **پنل، سرویس یا Backend** پشت یک دامنه و مسیر اختصاصی است.
+**Panel Proxy** یک ابزار سبک برای قرار دادن آدرس اصلی **پنل، سرویس یا Backend** پشت یک دامنه و مسیر اختصاصی است.
 
-اگر برای فروش یا ارائه‌ی **پنل ادمینی** یک آدرس اصلی دارید و می‌خواهید آدرس اصلی پنل را پشت دامنه‌ی خودتان قرار دهید، می‌توانید از Panel Proxy استفاده کنید.
+اگر برای فروش یا ارائه‌ی **پنل ادمینی** یک آدرس اصلی دارید و نمی‌خواهید آدرس مستقیم Backend را در اختیار کاربران قرار دهید، می‌توانید آن را پشت Domain خود قرار دهید.
 
-به‌جای ارائه مستقیم آدرس اصلی Backend، می‌توانید یک آدرس اختصاصی روی دامنه خود ایجاد کنید.
+### 🔗 مثال
 
-### 💡 مثال
-
-🔴 **آدرس اصلی:**
+🔴 آدرس اصلی:
 
 ```text
 https://server.example.com:2083/xxxxx
@@ -47,26 +35,27 @@ https://server.example.com:2083/xxxxx
 
 ⬇️
 
-🟢 **آدرس قابل ارائه به کاربر:**
+🟢 آدرس قابل ارائه به کاربر:
 
 ```text
 https://your-domain.com/Hcctdhjiffhdsehj
 ```
 
-Panel Proxy درخواست‌های دریافتی از مسیر اختصاصی را به Backend اصلی هدایت می‌کند.
+کاربر از طریق Domain و مسیر اختصاصی به سرویس متصل می‌شود و Panel Proxy درخواست را به Backend اصلی منتقل می‌کند.
 
 ---
 
 ## ✨ امکانات
 
-- 🔗 قرار دادن Backend پشت دامنه
+- 🔗 قرار دادن Backend پشت Domain
 - 🎲 ساخت مسیرهای تصادفی و اختصاصی
 - 🔄 Reverse Proxy
-- 🌐 پشتیبانی از Domain
+- 🌐 پشتیبانی از Custom Domain
 - 📦 مناسب برای ارائه و فروش سرویس
-- ⚡ نصب سریع و ساده
-- 🖥️ مناسب برای سرورهای Linux
-- 🔐 عدم استفاده از آدرس مستقیم Backend در URL عمومی
+- ⚡ نصب سریع و خودکار
+- 🖥️ مناسب برای Linux Server
+- 🔐 عدم نمایش آدرس مستقیم Backend در URL عمومی
+- 🛠️ نصب خودکار پیش‌نیازها
 
 ---
 
@@ -80,34 +69,25 @@ Panel Proxy می‌تواند برای موارد مختلفی استفاده ش
 - ☁️ سرویس‌های آنلاین
 - 📦 سرویس‌های اشتراکی
 - 🔗 ایجاد URL اختصاصی برای کاربران
-- 🖥️ قرار دادن سرویس‌های مختلف پشت یک Domain
+- 🖥️ قرار دادن سرویس‌ها پشت یک Domain
 
 ---
 
-## 🎯 چرا Panel Proxy؟
+## 🎯 نمونه استفاده
 
-فرض کنید یک پنل ادمینی برای فروش یا ارائه سرویس دارید و آدرس اصلی آن روی یک سرور قرار دارد.
-
-به‌جای اینکه آدرس اصلی را مستقیماً در اختیار کاربر قرار دهید، می‌توانید آن را پشت Domain خود قرار دهید:
+فرض کنید آدرس اصلی پنل شما این باشد:
 
 ```text
-Original Backend
-       │
-       ▼
-Panel Proxy
-       │
-       ▼
-your-domain.com/RandomPath
-       │
-       ▼
-      User
+https://server.example.com:2083/
 ```
 
-برای هر سرویس می‌توان یک مسیر اختصاصی ایجاد کرد، مانند:
+به‌جای ارائه مستقیم این آدرس، می‌توانید آن را پشت دامنه خود قرار دهید:
 
 ```text
-/Hcctdhjiffhdsehj
+https://your-domain.com/Hcctdhjiffhdsehj
 ```
+
+در این حالت کاربر از آدرس Domain استفاده می‌کند و درخواست از طریق Panel Proxy به Backend اصلی منتقل می‌شود.
 
 ---
 
@@ -129,31 +109,58 @@ your-domain.com/RandomPath
               🖥️ Original Backend
 ```
 
-درخواست کاربر ابتدا به Domain ارسال می‌شود و Panel Proxy آن را به Backend تنظیم‌شده منتقل می‌کند.
+Panel Proxy درخواست دریافتی از مسیر اختصاصی را به Backend تنظیم‌شده ارسال می‌کند.
 
 ---
 
-## 🔗 نمونه
+## 📥 نصب‌کننده Degeris
 
-### Backend اصلی
+فایل `Degeris.sh` برای ساده‌تر شدن نصب پروژه ساخته شده است.
 
-```text
-https://server.example.com:2083/xxxxx
-```
-
-### URL قابل ارائه
+این فایل مراحل زیر را انجام می‌دهد:
 
 ```text
-https://your-domain.com/Hcctdhjiffhdsehj
+1. بررسی دسترسی Root
+        ↓
+2. شناسایی Ubuntu / Debian
+        ↓
+3. به‌روزرسانی Package List
+        ↓
+4. نصب پیش‌نیازها
+        ↓
+5. نصب و راه‌اندازی Nginx
+        ↓
+6. دانلود install.sh
+        ↓
+7. اجرای install.sh
+        ↓
+8. تکمیل نصب Panel Proxy
 ```
 
-کاربر از URL روی Domain استفاده می‌کند و Panel Proxy درخواست را به Backend اصلی ارسال می‌کند.
+### 📦 پیش‌نیازهای نصب‌شده
+
+در فرآیند نصب، ابزارهای موردنیاز عمومی مانند موارد زیر نصب می‌شوند:
+
+```text
+nginx
+curl
+wget
+git
+ca-certificates
+openssl
+unzip
+tar
+sudo
+socat
+lsof
+net-tools
+```
 
 ---
 
 ## 🛠️ نصب دستی
 
-در صورت نیاز می‌توانید Repository را Clone کرده و Installer را اجرا کنید:
+اگر می‌خواهید Repository را به‌صورت دستی دریافت کنید:
 
 ```bash
 git clone https://github.com/Degeris/panel-proxy.git
@@ -164,23 +171,15 @@ chmod +x install.sh
 
 ---
 
-## 📦 نصب با یک دستور
+## 🌐 نیازمندی‌ها
 
-اگر فقط می‌خواهید Installer را دانلود و اجرا کنید:
+قبل از استفاده توصیه می‌شود موارد زیر را داشته باشید:
 
-```bash
-curl -fsSL -o install.sh https://raw.githubusercontent.com/Degeris/panel-proxy/main/install.sh && chmod +x install.sh && ./install.sh
-```
-
----
-
-## 🖥️ Requirements
-
-- Linux Server
-- دسترسی `root`
-- Domain
-- اتصال اینترنت
-- تنظیم DNS دامنه به سمت سرور
+- 🖥️ Linux Server
+- 🔑 دسترسی Root
+- 🌐 یک Domain
+- 📡 اتصال اینترنت
+- ⚙️ امکان تنظیم DNS دامنه به سمت Server
 
 ---
 
@@ -188,20 +187,33 @@ curl -fsSL -o install.sh https://raw.githubusercontent.com/Degeris/panel-proxy/m
 
 Panel Proxy باعث می‌شود آدرس Backend در **URL عمومی** استفاده نشود؛ اما این موضوع به‌تنهایی به معنی غیرقابل‌شناسایی یا غیرقابل‌دسترسی بودن Backend از روش‌های دیگر نیست.
 
-برای امنیت بهتر:
+برای امنیت بیشتر:
 
 - 🔒 دسترسی مستقیم Backend را محدود کنید.
 - 🧱 Firewall مناسب تنظیم کنید.
 - 🔑 Authentication مناسب داشته باشید.
 - 🔐 از HTTPS استفاده کنید.
 - 🚫 اطلاعات حساس را داخل Repository عمومی قرار ندهید.
-- 🛡️ Secretها و تنظیمات خصوصی را در فایل‌های عمومی قرار ندهید.
+- 🛡️ Secretها و Configurationهای خصوصی را عمومی نکنید.
 
 ---
 
-## 🔗 Repository
+## 📂 ساختار Repository
 
-**GitHub:**
+```text
+panel-proxy/
+│
+├── install.sh
+├── Degeris.sh
+├── README.md
+└── LICENSE
+```
+
+---
+
+## 🔗 GitHub
+
+Repository رسمی پروژه:
 
 https://github.com/Degeris/panel-proxy
 
@@ -209,7 +221,7 @@ https://github.com/Degeris/panel-proxy
 
 ## 📄 License
 
-برای اطلاعات مربوط به License پروژه، فایل `LICENSE` را مشاهده کنید.
+برای مشاهده شرایط استفاده و License پروژه، فایل `LICENSE` را بررسی کنید.
 
 ---
 
