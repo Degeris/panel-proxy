@@ -1,6 +1,3 @@
-🚀 Panel Proxy
-
-"⚡ نصب سریع" (#-نصب-سریع) · "📦 GitHub" (https://github.com/Degeris/panel-proxy)
 
 ---
 
@@ -8,7 +5,7 @@
 
 برای نصب مستقیم آخرین نسخه، دستور زیر را در ترمینال سرور اجرا کنید:
 
-```bash <(curl -fsSL https://raw.githubusercontent.com/Degeris/panel-proxy/main/install.sh)```
+``` bash <(curl -fsSL https://raw.githubusercontent.com/Degeris/panel-proxy/main/install.sh) ```
 
 «📋 برای کپی کردن دستور، روی دکمه Copy بالای کادر کد کلیک کنید.»
 
